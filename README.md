@@ -197,6 +197,8 @@ Physical Features
 	
 
 Growth Requirements
+
+
 	Adapted to Coarse Textured Soils	
 	        • Yes	
 	        •  No	
@@ -346,6 +348,8 @@ Growth Requirements
 	
 	
 Reproduction 
+
+
 	Bloom Period	
 	        • Spring
 	        • Early Spring
@@ -465,6 +469,8 @@ Reproduction
 	
 	
 Use
+
+
 	Berry/Nut/Seed Product	
 	        • Yes
 	        •  No
