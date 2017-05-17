@@ -25,19 +25,19 @@ PlantObj.prototype.toHtml = function () {
 };
 
 
-$(function(){
-  $.ajax({
-    url:'/scripts/plants.json',
-    dataType:'json',
-  }).done(function(data){
-    data.forEach((function (plants){
-      console.log('request done: ' + Date.now());
-      ALLplants.push(new PlantObj(plants));
-      console.log (ALLplants, ' is ALLplants');
-    }));
-    ALLplants.forEach(function(p) {
-      $('#handleBarMenu').append(p.toHtml());
-    });
-  })
-  console.log ('requst started:' + Date.now())
-});
+// $(function(){
+//   $.ajax({
+//     url:'/scripts/plants.json',
+//     dataType:'json',
+//   }).done(function(data){
+//     data.forEach((function (plants){
+//       console.log('request done: ' + Date.now());
+//       ALLplants.push(new PlantObj(plants));
+//       console.log (ALLplants, ' is ALLplants');
+//     }));
+//     ALLplants.forEach(function(p) {
+//       $('#handleBarMenu').append(p.toHtml());
+//     });
+//   })
+//   console.log ('requst started:' + Date.now())
+// });
