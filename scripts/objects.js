@@ -1,42 +1,36 @@
-var plants = [];
+var ALLplants = [];
 // constructor function
-function plantObj (name,location,color,planttype,family, description) {
-  this.name = name;
-  this.location = location;
-  this.color = color;
-  this.planttype = planttype;
-  this.family = family;
-  this.description = description;
-  plants.push(this);
+function PlantObj (obj) {
+  this.number = obj.number;
+  this.genus = obj.genus;
+  this.species = obj.species;
+  this.full_species_name = obj.full_species_name;
+  this.common_name = obj.common_name;
+  this.dicot_moncot_gymno = obj.dicot_moncot_gymno;
+  this.family = obj.family;
+  this.common_family = obj.common_family;
+  this.or_der = obj.or_der;
+  this.id = obj.id;
+  this.class = obj.class;
+  this.division = obj.division;
+  this.superdevision = obj.superdevision;
+  this.subkingdom = obj.subkingdom;
+  this.kingdom = obj.kingdom;
 }
-
-// Instantiating new objects
-var rose = new plantObj ('rose','seattle', 'red', 'flower','Apiaceae','little bush');
-var lailak = new plantObj ('centralia','purple', 'bush', 'Apocynaceae','big bush');
-var oak = new plantObj ('oregon','green', 'tree', 'AncientTree', 'big tree that can grow 1000 years');
-
-
-Project.prototype.toHtml = function () {
-  var $source = $('#portfolioHandlebar').html();
-  // console.log($source);
-  var template = Handlebars.compile($source);
-  // console.log(template);
-  return template(this);
-};
 
 $(function(){
   $.ajax({
-    url:'/scripts/data.json',
+    url:'/scripts/species.json',
     dataType:'json',
   }).done(function(data){
-    data.map((function (project){
-      console.log('request done: ' + Date.now());
-      allProjects.push(new Project(project));
+    data.forEach((function (plants){
+      console.log('insde of 1st for each');
+      ALLplants.push(new PlantObj(plants));
+      console.log (ALLplants, ' is ALLplants');
+      console.log(plants);
     }));
-    allProjects.map(function(p) {
-      $('#handlebarSection').append(p.toHtml());
+    ALLplants.forEach(function(p) {
+      $('#handleBarMenu').append(p.toHtml());
     });
-    projectView.initIndexPage();
   })
-  console.log ('requst started:' + Date.now())
 });
