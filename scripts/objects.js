@@ -29,8 +29,8 @@ $(function(){
       console.log (ALLplants, ' is ALLplants');
       console.log(plants);
     }));
-    ALLplants.forEach(function(p) {
-      $('#handleBarMenu').append(p.toHtml());
+    // ALLplants.forEach(function(p) {
+    //   $('#handleBarMenu').append(p.toHtml());
     });
   })
 });
